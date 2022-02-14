@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Deer logs</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- Default Refresher -->
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+</ion-content>
+
+<!-- Custom Refresher Properties -->
+<ion-content>
+  <ion-refresher slot="fixed" pullFactor="0.5" pullMin="100" pullMax="200">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+</ion-content>
+
+<!-- Custom Refresher Content -->
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+</ion-content>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+
+    <ion-card>
+      <label> &nbsp;</label><br>
+
+      <label>Other details.</label>
+      <ion-input style="background-color: aliceblue; width: 50%;   margin-left: auto;
+      margin-right: auto;
+      display: block;border-radius: 10px;color:black" type="text" [(ngModel)]="other" text-right id="other" ></ion-input>
+      <label> &nbsp;</label><br>
+      <ion-button (click)="sendittt()">Send</ion-button>
+    </ion-card>
+
+
+    
+
+  </div>
+</ion-content>
